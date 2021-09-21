@@ -8,3 +8,7 @@ In this exploration, the primary goal is to discover methods for applying modern
 * [spaCy 3.1.2: "Industrial-Strength Natural Language Processing"](https://spacy.io/)
 * [pyLDAvis 3.3.1: "Python library for interactive topic model visualization"](https://pyldavis.readthedocs.io/en/latest/readme.html)
 * [Gensim 4.1.2: "Topic modelling for humans"](https://radimrehurek.com/gensim/index.html)
+
+### References
+
+* Goldhahn, D., Eckart, T., Quasthoff, U., & others. (2012). Building large monolingual dictionaries at the Leipzig corpora collection: From 100 to 200 languages. LREC, 29, 31–43.
