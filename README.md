@@ -8,5 +8,6 @@ In this exploration, the primary goal is to discover methods for applying modern
 * [spaCy 3.1.2: "Industrial-Strength Natural Language Processing"](https://spacy.io/)
 * [pyLDAvis 3.3.1: "Python library for interactive topic model visualization"](https://pyldavis.readthedocs.io/en/latest/readme.html)
 * [Gensim 4.1.2: "Topic modelling for humans"](https://radimrehurek.com/gensim/index.html)
+* [Google Cloud Translation](https://cloud.google.com/translate/)
 
 ### [References](./REFERENCES.md)
