@@ -8,11 +8,11 @@ In this exploration, the primary goal is to discover methods for applying modern
 
 ### Software Tools
 
-* [Google Colab](https://colab.research.google.com/)
-* [Google Cloud Translation](https://cloud.google.com/translate/)
-* [spaCy 3.1.2: "Industrial-Strength Natural Language Processing"](https://spacy.io/)
-* [Gensim 4.1.2: "Topic modelling for humans"](https://radimrehurek.com/gensim/index.html)
-* [pyLDAvis 3.3.1: "Python library for interactive topic model visualization"](https://pyldavis.readthedocs.io/en/latest/readme.html)
+* [Google Colab Notebooks](https://colab.research.google.com/)
+* [Google Cloud Translation API](https://cloud.google.com/translate/)
+* [spaCy 3.1.2 "Industrial-Strength Natural Language Processing"](https://spacy.io/)
+* [Gensim 4.1.2 "Topic modelling for humans"](https://radimrehurek.com/gensim/index.html)
+* [pyLDAvis 3.3.1 "Python library for interactive topic model visualization"](https://pyldavis.readthedocs.io/en/latest/readme.html)
 
 ### Data Sources
 
@@ -44,4 +44,4 @@ In this exploration, the primary goal is to discover methods for applying modern
 
 ## [Project References](./REFERENCES.md)
 
-Authored with [ghostwriter v1.8.1](https://wereturtle.github.io/ghostwriter/index.html)
+Authored with [ghostwriter](https://wereturtle.github.io/ghostwriter/index.html)
