@@ -41,3 +41,5 @@ In this exploration, the primary goal is to discover methods for applying modern
 ## Ideas for Further Exploration
 
 ## [Project References](./REFERENCES.md)
+
+Authored with [ghostwriter v1.8.1](https://wereturtle.github.io/ghostwriter/index.html)
