@@ -17,7 +17,7 @@ In this exploration, the primary goal is to discover methods for applying modern
 
 ### Data Sources
 
-* ABU : la Bibliothèque Universelle - [7 works by Jules Verne](http://abu.cnam.fr/BIB/) 
+* ABU : la Bibliothèque Universelle - [7 works in French by Jules Verne](http://abu.cnam.fr/BIB/) 
 * Corpora Collection Leipzig University - [30K 2019 Spanish RSS News Samples](https://wortschatz.uni-leipzig.de/en/download/Spanish#spa-ar_web_2019)
 * European Parliament Proceedings Parallel Corpus 1996-2011 - [Parallel Corpus Polish-English 01/2007 - 11/2011](http://www.statmt.org/europarl/)
 
@@ -30,7 +30,7 @@ In this exploration, the primary goal is to discover methods for applying modern
 1. Language Preprocessing
 1. Parameter Exploration
 1. Dictionary Translation
-1. Visualization
+1. Model Visualization
 
 ## French Sample Analysis
 
