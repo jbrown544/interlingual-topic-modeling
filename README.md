@@ -1,6 +1,6 @@
 # Unsupervised Thematic Discovery in Non-English Natural Language Corpora
 
-visualization
+![pyLDAvis Model][./img/header.png]
 
 ## Project Overview
 
