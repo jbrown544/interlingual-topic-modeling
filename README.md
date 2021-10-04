@@ -65,12 +65,26 @@ For model evaluation, a configurable evaluation function is provided which build
 
 ### French Sample Analysis
 
+![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/%27From_the_Earth_to_the_Moon%27_by_Henri_de_Montaut_39.jpg/327px-%27From_the_Earth_to_the_Moon%27_by_Henri_de_Montaut_39.jpg)
+
+*From the Earth to the Moon* [Public Domain]( https://commons.wikimedia.org/w/index.php?curid=11412182)
+
+This sample consists of 7 works by the French author Jules Verne. These are the works listed in length order (longest to shortest) and linked to their Wikipedia plot summaries:
+	
++ [Five Weeks in a Balloon](https://en.wikipedia.org/wiki/Five_Weeks_in_a_Balloon#Plot_summary)
++ [Around the World in Eighty Days](https://en.wikipedia.org/wiki/Around_the_World_in_Eighty_Days#Plot)
++ [Robur the Conqueror](https://en.wikipedia.org/wiki/Robur_the_Conqueror#Plot_summary)
++ [From the Earth to the Moon](https://en.wikipedia.org/wiki/From_the_Earth_to_the_Moon#Plot)
++ [The Begum's Fortune](https://en.wikipedia.org/wiki/The_Begum%27s_Fortune#Plot_summary)
++ [The Blockade Runners](https://en.wikipedia.org/wiki/The_Blockade_Runners#Plot_introduction)
++ [The Mutineers of the Bounty](https://en.wikipedia.org/wiki/The_Mutineers_of_the_Bounty)
+
 ### Spanish Sample Analysis
 
 ### English-Polish Parallel Sample Analysis
 
 ## Ideas for Further Exploration
 
-## [Project References](./REFERENCES.md)
+[Project References](https://github.com/jbrown544/interlingual-topic-modeling/blob/main/REFERENCES.md)
 
 Authored with [ghostwriter](https://wereturtle.github.io/ghostwriter/index.html)
