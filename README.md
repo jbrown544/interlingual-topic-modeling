@@ -22,16 +22,16 @@ Once these steps and associated tools are defined below, a series of application
 * [Google Colab Notebooks](https://colab.research.google.com/)
 * [Google Cloud Translation API](https://cloud.google.com/translate/)
 
-## Analysis Steps
+## Steps to Analysis
 
-1. Language-Neutral Text Processing Pipeline
+1. Language-Neutral Processing Pipeline and EDA
 1. Coherence Evaluation
 1. Translation Integration
 1. Model Visualization
 
-### Language-Neutral Text Processing Pipeline
+### Language-Neutral Processing Pipeline and EDA
 
-The text processing pipeline used in this exploration is based around the language models available in spaCy. The processing pipeline is very generic taking advantage of capabilities in spaCy which can be varied by changing out the model in use.
+The text processing pipeline used in this exploration is based around the language models available in spaCy. The processing pipeline is very generic taking advantage of capabilities in spaCy which can be varied by changing out the language model in use.
 
 After processing texts in a stream with the ```pipe()``` method on the given language model, lemmatized tokens are filtered by:
 
@@ -39,6 +39,12 @@ After processing texts in a stream with the ```pipe()``` method on the given lan
 + Language-Specific Stop words
 + Alphabetic-only Tokens
 + Lemma Within a Length Range
+
+A general EDA function computes various useful statistics over the text input. The EDA independently processes using its own language model pipeline as it takes measure of the entire corpora versus the subset used by processing.
+
+See the Google Colab notebook subsection "Language-Neutral Processing Pipeline" for processing functions. A function is available using Gensim's simple parser for comparison purposes.
+
+See the Google Colab notebook subsection "Text Exploratory Data Analysis (EDA)" for the EDA function.
 
 ### Coherence Evaluation
 
@@ -48,28 +54,30 @@ For model evaluation, a configurable evaluation function is provided which build
 
 #### Translation Caching
 
+Because there are costs associated with the translation API, when features are translated they are persisted in a JSON cache file. This file contains dictionaries for each language pair. Each dictionary contains individual terms previously translated. If the project notebook is being executed in an ephemeral environment such as Google Colab, remember to download a permanent copy of the files persisted in the ```\caches``` folder.
+
 ### Model Visualization
 
 ### Other Tools
 
-## Demonstrations
+# Demonstrations
 
-### Data Samples
+## Language Samples
 
-* ABU : la Bibliothèque Universelle 
+1. **French:** ABU la Bibliothèque Universelle 
 	* [7 works in French by Jules Verne](http://abu.cnam.fr/BIB/) 
-* Corpora Collection Leipzig University
+1. **Spanish:** Corpora Collection Leipzig University
 	* [30K 2019 Spanish RSS News Samples](https://wortschatz.uni-leipzig.de/en/download/Spanish#spa-ar_web_2019)
-* European Parliament Proceedings Parallel Corpus 1996-2011
+1. **Polish/English Parallel:** European Parliament Proceedings Parallel Corpus 1996-2011
 	* [Parallel Corpus Polish-English 01/2007-11/2011](http://www.statmt.org/europarl/)
 
-### French Sample Analysis
+### French Language Sample Analysis
 
 ![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/%27From_the_Earth_to_the_Moon%27_by_Henri_de_Montaut_39.jpg/327px-%27From_the_Earth_to_the_Moon%27_by_Henri_de_Montaut_39.jpg)
 
 *From the Earth to the Moon* [Public Domain]( https://commons.wikimedia.org/w/index.php?curid=11412182)
 
-This sample consists of 7 works by the French author Jules Verne. These are the works listed in length order (longest to shortest) and linked to their Wikipedia plot summaries:
+This sample consists of seven works by the French author Jules Verne. These are the works listed in length order (longest to shortest) and linked to their Wikipedia plot summaries:
 	
 + [Five Weeks in a Balloon](https://en.wikipedia.org/wiki/Five_Weeks_in_a_Balloon#Plot_summary)
 + [Around the World in Eighty Days](https://en.wikipedia.org/wiki/Around_the_World_in_Eighty_Days#Plot)
@@ -79,9 +87,9 @@ This sample consists of 7 works by the French author Jules Verne. These are the 
 + [The Blockade Runners](https://en.wikipedia.org/wiki/The_Blockade_Runners#Plot_introduction)
 + [The Mutineers of the Bounty](https://en.wikipedia.org/wiki/The_Mutineers_of_the_Bounty)
 
-### Spanish Sample Analysis
+### Spanish Language Sample Analysis
 
-### English-Polish Parallel Sample Analysis
+### English-Polish Parallel Language Sample Analysis
 
 ## Ideas for Further Exploration
 
