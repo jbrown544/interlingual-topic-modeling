@@ -2,9 +2,9 @@
 
 [![Built with spaCy](https://img.shields.io/badge/made%20with%20❤%20and-spaCy-09a3d5.svg)](https://spacy.io)
 
-## Project Objective
+## Objective
 
-In this exploration, the primary goal is to discover methods for applying modern NLP thematic modeling to generate intuition over non-English language corpora without requiring source document translation. Secondary goals are to discover techniques for hyperparameter optimization and to develop reusable interlingual tools portable across language sources.  Inputs into the processes will be unstructured therefore the design will make few assumptions allowing for flexibility with varied sources and languages.
+In this exploration, the primary goal is to discover methods for applying modern NLP thematic modeling to generate intuition over non-English language corpora without requiring source document translation. Secondary goals are to discover techniques for parameter optimization and to develop reusable interlingual tools portable across language sources.  Inputs into the processes will be unstructured therefore the design will make few assumptions allowing for flexibility with varied sources and languages.
 
 ![pyLDAvis Visualization](./img/header.png)
 
@@ -19,8 +19,8 @@ Once these steps and associated tools are described below, their application wil
 * [spaCy 3.1.2 "Industrial-Strength Natural Language Processing"](https://spacy.io/)
 * [Gensim 4.1.2 "Topic modelling for humans"](https://radimrehurek.com/gensim/index.html)
 * [pyLDAvis 3.3.1 "Python library for interactive topic model visualization"](https://pyldavis.readthedocs.io/en/latest/readme.html)
-* [Google Colab Notebooks](https://colab.research.google.com/)
 * [Google Cloud Translation API](https://cloud.google.com/translate/)
+* [Google Colab Notebooks](https://colab.research.google.com/)
 
 **SpaCy** is applied to both parse input text and identify useful features by analyzing the natural language structure within the text. Since this exploration covers multiple language sources, spaCy's many language models which can be interchanged behind its API will be used to allow creation of a single set of text processing functions.
 
@@ -62,13 +62,19 @@ For model evaluation, a configurable evaluation function is provided which build
 
 ### 3. Translation Integration
 
+TODO
+
 #### Translation Caching
 
 Because there are costs associated with the translation API, when features are translated they are persisted in a JSON cache file. This file contains dictionaries for each language pair. Each dictionary contains individual terms previously translated. If the project notebook is being executed in an ephemeral environment such as Google Colab, remember to download a permanent copy of the files persisted in the ```\caches``` folder.
 
 ### 4. Model Visualization and Analysis
 
+TODO
+
 ### Other Tools
+
+TODO
 
 # Demonstrations
 
@@ -84,7 +90,7 @@ Because there are costs associated with the translation API, when features are t
 ### French Language Sample Analysis
 
 <figure>
-<img src="https://raw.githubusercontent.com/jbrown544/interlingual-topic-modeling/main/img/327px-'From_the_Earth_to_the_Moon'_by_Henri_de_Montaut_39.jpg" width="300"/>
+<img src="https://raw.githubusercontent.com/jbrown544/interlingual-topic-modeling/main/img/327px-'From_the_Earth_to_the_Moon'_by_Henri_de_Montaut_39.jpg" height="400" width="300"/>
 <figcaption>Henri de Montaut, <a href="https://commons.wikimedia.org/w/index.php?curid=11412182">Public Domain</a>, via Wikimedia Commons</figcaption>
 </figure>
 
@@ -98,12 +104,16 @@ This sample consists of seven works by the French author Jules Verne. These are 
 + [The Blockade Runners](https://en.wikipedia.org/wiki/The_Blockade_Runners#Plot_introduction)
 + [The Mutineers of the Bounty](https://en.wikipedia.org/wiki/The_Mutineers_of_the_Bounty)
 
+TODO
+
 ### Spanish Language Sample Analysis
 
 <figure>
 <img src="https://raw.githubusercontent.com/jbrown544/interlingual-topic-modeling/main/img/109899_newsstand_300.jpg" width="300"/>
 <figcaption>Melbeans, <a href="https://commons.wikimedia.org/wiki/File:109899_newsstand_300.jpg">Public Domain</a>, via Wikimedia Commons</figcaptiion>
 </figure>
+
+TODO
 
 ### English-Polish Parallel Language Sample Analysis
 
@@ -112,8 +122,11 @@ This sample consists of seven works by the French author Jules Verne. These are 
 <figcaption>Michielverbeek, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption>
 </figure>
 
+TODO
 
 ## Ideas for Further Exploration
+
+TODO
 
 [Project References](https://github.com/jbrown544/interlingual-topic-modeling/blob/main/REFERENCES.md)
 
