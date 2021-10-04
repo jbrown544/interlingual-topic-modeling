@@ -85,7 +85,7 @@ Because there are costs associated with the translation API, when features are t
 
 ![Image](https://raw.githubusercontent.com/jbrown544/interlingual-topic-modeling/main/img/327px-'From_the_Earth_to_the_Moon'_by_Henri_de_Montaut_39.jpg)
 
-*From the Earth to the Moon* [Public Domain]( https://commons.wikimedia.org/w/index.php?curid=11412182)
+*From the Earth to the Moon [Public Domain](https://commons.wikimedia.org/w/index.php?curid=11412182)*
 
 This sample consists of seven works by the French author Jules Verne. These are the works listed in length order (longest to shortest) and linked to their Wikipedia plot summaries:
 	
@@ -99,7 +99,13 @@ This sample consists of seven works by the French author Jules Verne. These are 
 
 ### Spanish Language Sample Analysis
 
-<div class="getty embed image" style="background-color:#fff;display:inline-block;font-family:Roboto,sans-serif;color:#a7a7a7;font-size:11px;width:100%;max-width:498px;"><div style="padding:0;margin:0;text-align:left;"><a href="http://www.gettyimages.com/detail/458680657" target="_blank" style="color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;">Embed from Getty Images</a></div><div style="overflow:hidden;position:relative;height:0;padding:69.27711% 0 0 0;width:100%;"><iframe src="//embed.gettyimages.com/embed?assets=458680657,512034480,531627279&et=EKKwPsLISGlVwi1VcyRXBg&tld=com&sig=F5z7w7TrVv1nuYv_mBpfxr_cnpAN-mmDtf7rGiiNoeA=&caption=false&ver=1" scrolling="no" frameborder="0" width="498" height="345" style="display:inline-block;position:absolute;top:0;left:0;width:100%;height:100%;margin:0;"></iframe></div></div>
+![Image](https://raw.githubusercontent.com/jbrown544/interlingual-topic-modeling/main/img/109899_newsstand_300.jpg)
+
+*Melbeans, [Public Domain](https://commons.wikimedia.org/wiki/File:109899_newsstand_300.jpg), via Wikimedia Commons*
+
+
+
+
 
 ### English-Polish Parallel Language Sample Analysis
 
