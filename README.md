@@ -83,9 +83,10 @@ Because there are costs associated with the translation API, when features are t
 
 ### French Language Sample Analysis
 
-![Image](https://raw.githubusercontent.com/jbrown544/interlingual-topic-modeling/main/img/327px-'From_the_Earth_to_the_Moon'_by_Henri_de_Montaut_39.jpg)
-
-*From the Earth to the Moon [Public Domain](https://commons.wikimedia.org/w/index.php?curid=11412182)*
+<figure>
+<img src="https://raw.githubusercontent.com/jbrown544/interlingual-topic-modeling/main/img/327px-'From_the_Earth_to_the_Moon'_by_Henri_de_Montaut_39.jpg" width="300"/>
+<figcaption>Henri de Montaut, <a href="https://commons.wikimedia.org/w/index.php?curid=11412182">Public Domain</a>, via Wikimedia Commons</figcaption>
+</figure>
 
 This sample consists of seven works by the French author Jules Verne. These are the works listed in length order (longest to shortest) and linked to their Wikipedia plot summaries:
 	
@@ -99,15 +100,18 @@ This sample consists of seven works by the French author Jules Verne. These are 
 
 ### Spanish Language Sample Analysis
 
-![Image](https://raw.githubusercontent.com/jbrown544/interlingual-topic-modeling/main/img/109899_newsstand_300.jpg)
-
-*Melbeans, [Public Domain](https://commons.wikimedia.org/wiki/File:109899_newsstand_300.jpg), via Wikimedia Commons*
-
-
-
-
+<figure>
+<img src="https://raw.githubusercontent.com/jbrown544/interlingual-topic-modeling/main/img/109899_newsstand_300.jpg" width="300"/>
+<figcaption>Melbeans, <a href="https://commons.wikimedia.org/wiki/File:109899_newsstand_300.jpg">Public Domain</a>, via Wikimedia Commons</figcaptiion>
+</figure>
 
 ### English-Polish Parallel Language Sample Analysis
+
+<figure>
+<img src="https://raw.githubusercontent.com/jbrown544/interlingual-topic-modeling/main/img/Leeuwarden%2C_de_vlaggen_van_de_Europese_Unie_op_de_Stationsweg_IMG_3726_2018-05-21_12.47.jpg" width="300"/>
+<figcaption>Michielverbeek, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption>
+</figure>
+
 
 ## Ideas for Further Exploration
 
