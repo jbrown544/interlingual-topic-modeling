@@ -6,13 +6,13 @@
 
 In this exploration, the primary goal is to discover methods for applying modern NLP thematic modeling to generate intuition over non-English language corpora without requiring source document translation. Secondary goals are to discover techniques for parameter optimization and to develop reusable interlingual tools portable across language sources.  Inputs into the processes will be unstructured therefore the design will make few assumptions allowing for flexibility with varied sources and languages.
 
-![pyLDAvis Visualization](./img/header.png)
+![pyLDAvis Visualization](./img/header.png "Topic Model Visualization")
 
-## Methods
+## Methods and Tooling
 
-The methods applied to explore the project objective is to stack a series of software tools and provide custom utility functions to accomplish a series of exploration steps. This "toolkit" allows flexibility while exploring latent topics in many natural language  sources.
+The method applied to explore the project objective is to stack a series of software tools embellished with custom utility functions to accomplish a series of preparation and analysis steps. This "toolkit" approach allows flexibility for exploring latent topics across many natural language sources.
 
-Once these steps and associated tools are described below, their application will be attempted to determine their efficacy for the project's objective. The intention of describing these tools and methods is to enable further exploration. After an explanation of the tools and demonstrations, ideas for further exploration will be offered based upon the experiences derived from this project. 
+After describing these steps and associated tools below, their application will be demonstrated to determine their efficacy for this project's objective. The intention of describing the tools and methods is to enable further exploration beyond the demonstrations given. After the explanation of these tools and their demonstration, ideas for further exploration will be offered based upon the experiences of this project. 
 
 ## Software Tools
 
@@ -34,10 +34,14 @@ A **Google Colab** notebook is used to contain and execute the source code for t
 
 ## Steps to Analysis
 
+Here are the overall steps applied in processing each language for high level context:
+
 1. Language-Neutral Processing Pipeline and EDA
 1. Coherence Evaluation
 1. Translation Integration
 1. Model Visualization and Analysis
+
+Each step will is elaborated below.
 
 ### 1. Language-Neutral Processing Pipeline and EDA
 
@@ -50,7 +54,7 @@ After processing texts in a stream with the ```pipe()``` method on the given lan
 + Alphabetic-only Tokens
 + Lemma Within a Length Range
 
-A general EDA function computes various useful statistics over the text input. The EDA independently processes using its own language model pipeline as it takes measure of the entire corpora versus the subset used by processing.
+A general EDA function computes various useful statistics over the text input. The statistics provided were loosely based upon a demonstration of the general EDA capabilities of the tool Splunk. The EDA independently processes using its own language model pipeline as it takes measure of the entire corpora versus the subset used by processing.
 
 See the Google Colab notebook subsection "Language-Neutral Processing Pipeline" for processing functions. A function is available using Gensim's simple parser for comparison purposes.
 
@@ -58,23 +62,23 @@ See the Google Colab notebook subsection "Text Exploratory Data Analysis (EDA)" 
 
 ### 2. Coherence Evaluation
 
-For model evaluation, a configurable evaluation function is provided which builds models asynchronously to take advantage of available processor cores. Coherence measures are gathered and plotted for the requested series of test variable values. The optimal model is returned with the value of the tested variable.
+For model evaluation, a configurable evaluation function is provided which builds test models asynchronously to take advantage of available processor cores. Coherence measures are gathered and plotted for the requested series of test variable values. The optimal model is returned with the value of the tested variable.
+
+This configurable function can be customized to either review a model directly or to review topics taken from the model for cases where the Gensim coherence model capabilities do not yet support a particular model class. In this demonstration, an HDP model is used which is not documented as yet supported by Gensim coherence modeling, but both approaches yield equivalent results in informal trials.
+
+Additionally, a sorting key function can be configured to select the optimal model based upon criteria. Functions for finding lowest values and those nearest one are included for use with the demonstrated coherence metrics.
 
 ### 3. Translation Integration
 
-TODO
+Translations are integrated for visualization by creating an alternate Gensim dictionary provided to pyLDAvis. This translated dictionary is created by persisting the Gensim generated dictionary to a file, augmenting the terms in the file with the requested language translation, then reconstituting an instance of the augmented dictionary. This augmented dictionary may then be used in pyLDAvis to present both the target and source language terms.
 
-#### Translation Caching
+#### Note: Translation Caching
 
-Because there are costs associated with the translation API, when features are translated they are persisted in a JSON cache file. This file contains dictionaries for each language pair. Each dictionary contains individual terms previously translated. If the project notebook is being executed in an ephemeral environment such as Google Colab, remember to download a permanent copy of the files persisted in the ```\caches``` folder.
+Because there are costs associated with the cloud translation API, as features are translated they are persisted in a JSON cache file. This file contains dictionaries for each language pair developed. Each language pair dictionary contains individual terms previously translated (source vs. target language). If a project notebook is being executed in an ephemeral environment (such as Google Colab), remember to download a permanent copy of the cache files in the ```\caches``` folder. Generating the same translations repeatedly using the cloud API can become unnecessarily expensive otherwise.
 
 ### 4. Model Visualization and Analysis
 
-TODO
-
-### Other Tools
-
-TODO
+Models are depicted using pyLDAvis dimensional reductions. This allows models usually exist with dimensional impossible to conceptualize to be be viewed on screen. These may be viewed by opening a notebook in either Google Colab or the nbviewer link accessible from with Github. The Github code viewer does show cell outputs, but does not show these visualizations which will appear as a blank output cell. [Here](https://www.youtube.com/watch?v=IksL96ls4o0) is an excellent video which helps explain the operation of pyLDAvis. It demonstrates an older version of the tool, but provides insight into how latent topics may be analyzed in a model.
 
 # Demonstrations
 
