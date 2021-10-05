@@ -37,9 +37,10 @@ A **Google Colab** notebook is used to contain and execute the source code for t
 Here are the overall steps applied in processing each language for high level context:
 
 1. Language-Neutral Processing Pipeline and EDA
+1. Modeling
 1. Coherence Evaluation
 1. Translation Integration
-1. Model Visualization and Analysis
+1. Visualization and Analysis
 
 Each step will is elaborated below.
 
@@ -60,7 +61,11 @@ See the Google Colab notebook subsection "Language-Neutral Processing Pipeline" 
 
 See the Google Colab notebook subsection "Text Exploratory Data Analysis (EDA)" for the EDA function.
 
-### 2. Coherence Evaluation
+### 2. Modeling
+
+In this pipeline, modeling and coherence evaluation have been integrated. In the following coherence evaluation step, the model showing the most promise is produced for continued processing. If the evaluation step does not produce the desired model, an additional coherence evaluation step is sometimes introduce which only evaluates a single value of a test variable. This ensures the single evaluated model is guaranteed to be the one output for further processing.
+
+### 3. Coherence Evaluation
 
 For model evaluation, a configurable evaluation function is provided which builds test models asynchronously to take advantage of available processor cores. Coherence measures are gathered and plotted for the requested series of test variable values. The optimal model is returned with the value of the tested variable.
 
@@ -68,7 +73,7 @@ This configurable function can be customized to either review a model directly o
 
 Additionally, a sorting key function can be configured to select the optimal model based upon criteria. Functions for finding lowest values and those nearest one are included for use with the demonstrated coherence metrics.
 
-### 3. Translation Integration
+### 4. Translation Integration
 
 Translations are integrated for visualization by creating an alternate Gensim dictionary provided to pyLDAvis. This translated dictionary is created by persisting the Gensim generated dictionary to a file, augmenting the terms in the file with the requested language translation, then reconstituting an instance of the augmented dictionary. This augmented dictionary may then be used in pyLDAvis to present both the target and source language terms.
 
@@ -76,9 +81,9 @@ Translations are integrated for visualization by creating an alternate Gensim di
 
 Because there are costs associated with the cloud translation API, as features are translated they are persisted in a JSON cache file. This file contains dictionaries for each language pair developed. Each language pair dictionary contains individual terms previously translated (source vs. target language). If a project notebook is being executed in an ephemeral environment (such as Google Colab), remember to download a permanent copy of the cache files in the ```\caches``` folder. Generating the same translations repeatedly using the cloud API can become unnecessarily expensive otherwise.
 
-### 4. Model Visualization and Analysis
+### 5. Visualization and Analysis
 
-Models are depicted using pyLDAvis dimensional reductions. This allows models usually exist with dimensional impossible to conceptualize to be be viewed on screen. These may be viewed by opening a notebook in either Google Colab or the nbviewer link accessible from with Github. The Github code viewer does show cell outputs, but does not show these visualizations which will appear as a blank output cell. [Here](https://www.youtube.com/watch?v=IksL96ls4o0) is an excellent video which helps explain the operation of pyLDAvis. It demonstrates an older version of the tool, but provides insight into how latent topics may be analyzed in a model.
+Models are depicted using pyLDAvis dimensional reductions. This allows models usually exist with dimensional impossible to conceptualize to be be viewed on screen. These may be viewed by opening a notebook in either Google Colab or the nbviewer link accessible from with GitHub. The GitHub code viewer does show cell outputs, but does not show these visualizations which will appear as a blank output cell. [Here](https://www.youtube.com/watch?v=IksL96ls4o0) is an excellent video which helps explain the operation of pyLDAvis. It demonstrates an older version of the tool, but provides insight into how latent topics may be analyzed in a model.
 
 # Demonstrations
 
@@ -130,7 +135,12 @@ TODO
 
 ## Ideas for Further Exploration
 
-TODO
+1. An interesting idea for additional exploration is to retrofit the processing pipeline introduced here with the library [tomotopy](https://bab2min.github.io/tomotopy/v0.12.2/en/). According to this [post by Eduardo Coronado Sroka](https://towardsdatascience.com/dont-be-afraid-of-nonparametric-topic-models-part-2-python-e5666db347a), Gensim can be difficult when using HDP and there may be advantages with tomotopy. Initial investigation indicated there [may be code](https://github.com/bab2min/tomotopy/blob/main/examples/lda_visualization.py) to help visualize tomotopy output using pyLDAvis.
+2. The JSON cache file currently persisting term translations could be modified to use a shared repository of translations such as a database service. Maintaining the information in a file is not always convenient. Interrogating cloud APIs for the translation of individual terms can become expensive.
+3. The parallel language sample used in this exploration did not generate ideal topic coherence. Investigating other translations such as public domain books may prove interesting for comparing topic models generated in works with equivalent meaning.
+4. Performing machine translations on work then applying this process also offers interesting territory for exploration. This is especially the case if the machine translation product introduces noise into the information potentially reducing coherence.
+
+## More Information
 
 [Project References](https://github.com/jbrown544/interlingual-topic-modeling/blob/main/REFERENCES.md)
 
