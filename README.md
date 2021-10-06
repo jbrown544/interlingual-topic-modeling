@@ -30,9 +30,9 @@ The Python notebook implementing these steps and tools is contained in this repo
 
 **pyLDAvis** provides visualizations which easily integrate with Gensim models. These visualizations will be used to explore the created models. These visualizations will also be the view into language translations.
 
-A **Google Colab** notebook is used to contain and execute the source code for this project. Given the processing load is excessive for the resources available to Colab notebooks, it is advised a local Jupyter instance be employed.
+A **Google Colab** notebook is used to contain and execute the source code for this project. Given this processing load is excessive for the resources made available to Colab, it is advisable to connect Colab to a [local Jupyter instance](https://research.google.com/colaboratory/local-runtimes.html) or execute this notebook on a suitably powerful workstation in Jupyter.
 
-**Google Cloud Translation** is used to augment the discovered features through term translation. To run the translations and generate a local repository of cached translation terms, you will need to establish your own Google Cloud account and include your own authentication key in the ```/keys``` folder of the project. There is cost associated with cloud translations which at the time of this writing allowed for 500K chars/month free, $20(USD) per 1M chars/month thereafter. The caching facility built into translations in this project helps manage expense. For a sense of total expense, this project was developed over two billing cycles and total charges were less than $10(USD)
+**Google Cloud Translation** is used to augment the discovered features through term translation. To run the translations and generate a local repository of cached translation terms, **you will need to establish your own Google Cloud account and include your own authentication key in the ```/keys``` folder of the project**. There is cost associated with cloud translations which at the time of this writing allowed for 500K chars/month free then $20(USD) per 1M chars/month thereafter. A caching facility built into translations for this project helps manage expense if you retain copies of the cache file ```xlat.json```. For an idea of potential expense, this project was developed over two billing cycles (1M free chars) and overage charges were less than $10(USD)
 
 ## Steps to Analysis
 
@@ -66,6 +66,8 @@ See the Google Colab notebook subsection "Text Exploratory Data Analysis (EDA)" 
 ### 2. Modeling
 
 In this pipeline, modeling and coherence evaluation have been integrated. In the following coherence evaluation step, the model showing the most promise is produced for continued processing. If the evaluation step does not produce the desired model, an additional coherence evaluation step is sometimes introduce which only evaluates a single value of a test variable. This ensures the single evaluated model is guaranteed to be the one output for further processing.
+
+The evaluations performed focus on the LDA and HDP models available in Gensim. Both models decompose documents into sets of topics which are themselves distributions over the vocabularies contained in the documents. LDA is a familiar modeling technique but requires the number of topics be specified and that the corpus be fully processed. HDP provides similar capabilities, but can infer the number of topics from the text. HDP may still be tuned within given parameters and will be compared to the more familiar LDA with the chosen data sets.
 
 ### 3. Coherence Evaluation
 
