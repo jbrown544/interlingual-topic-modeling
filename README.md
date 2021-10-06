@@ -14,15 +14,17 @@ The method applied to explore the project objective is to stack a series of soft
 
 After describing these steps and associated tools below, their application will be demonstrated to determine their efficacy for this project's objective. The intention of describing the tools and methods is to enable further exploration beyond the demonstrations given. After the explanation of these tools and their demonstration, ideas for further exploration will be offered based upon the experiences of this project. 
 
+The Python notebook implementing these steps and tools is contained in this repository as [Interlingual\_Topic\_Modeling.ipynb](https://github.com/jbrown544/interlingual-topic-modeling/blob/main/Interlingual_Topic_Modeling.ipynb).
+
 ## Software Tools
 
-* [spaCy 3.1.2 "Industrial-Strength Natural Language Processing"](https://spacy.io/)
+* [spaCy 3.1.3 "Industrial-Strength Natural Language Processing"](https://spacy.io/)
 * [Gensim 4.1.2 "Topic modelling for humans"](https://radimrehurek.com/gensim/index.html)
 * [pyLDAvis 3.3.1 "Python library for interactive topic model visualization"](https://pyldavis.readthedocs.io/en/latest/readme.html)
 * [Google Cloud Translation API](https://cloud.google.com/translate/)
 * [Google Colab Notebooks](https://colab.research.google.com/)
 
-**SpaCy** is applied to both parse input text and identify useful features by analyzing the natural language structure within the text. Since this exploration covers multiple language sources, spaCy's many language models which can be interchanged behind its API will be used to allow creation of a single set of text processing functions.
+**spaCy** is applied to both parse input text and identify useful features by analyzing the natural language structure within the text. Since this exploration covers multiple language sources, spaCy's many language models which can be interchanged behind its API will be used to allow creation of a single set of text processing functions.
 
 **Gensim** provides topic modeling capabilities and coherence analysis. The outputs from spaCy's preprocessing will be translated into processable "bag-of-words" models then processed using topic modeling algorithms provide by Gensim. Translation integration explained below is worked into Gensim's ```Dictionary``` data structure which is referenced by pyLDAvis explained below.
 
@@ -42,7 +44,7 @@ Here are the overall steps applied in processing each language for high level co
 1. Translation Integration
 1. Visualization and Analysis
 
-Each step will is elaborated below.
+Each step will be elaborated below.
 
 ### 1. Language-Neutral Processing Pipeline and EDA
 
@@ -77,7 +79,7 @@ Additionally, a sorting key function can be configured to select the optimal mod
 
 Translations are integrated for visualization by creating an alternate Gensim dictionary provided to pyLDAvis. This translated dictionary is created by persisting the Gensim generated dictionary to a file, augmenting the terms in the file with the requested language translation, then reconstituting an instance of the augmented dictionary. This augmented dictionary may then be used in pyLDAvis to present both the target and source language terms.
 
-#### Note: Translation Caching
+#### Note: Caching
 
 Because there are costs associated with the cloud translation API, as features are translated they are persisted in a JSON cache file. This file contains dictionaries for each language pair developed. Each language pair dictionary contains individual terms previously translated (source vs. target language). If a project notebook is being executed in an ephemeral environment (such as Google Colab), remember to download a permanent copy of the cache files in the ```\caches``` folder. Generating the same translations repeatedly using the cloud API can become unnecessarily expensive otherwise.
 
@@ -90,11 +92,14 @@ Models are depicted using pyLDAvis dimensional reductions. This allows models us
 ## Language Samples
 
 1. **French:** ABU la Bibliothèque Universelle 
-	* [7 works in French by Jules Verne](http://abu.cnam.fr/BIB/) 
+	* source: [7 works in French by Jules Verne](http://abu.cnam.fr/BIB/)
+	* project copies: [/text/books/fr/](https://github.com/jbrown544/interlingual-topic-modeling/tree/main/text/books/fr)
 1. **Spanish:** Corpora Collection Leipzig University
-	* [30K 2019 Spanish RSS News Samples](https://wortschatz.uni-leipzig.de/en/download/Spanish#spa-ar_web_2019)
+	* source: [30K 2019 Spanish RSS News Samples](https://wortschatz.uni-leipzig.de/en/download/Spanish#spa-ar_web_2019)
+	* project copies: [/text/news/es/](https://github.com/jbrown544/interlingual-topic-modeling/tree/main/text/news/es)
 1. **Polish/English Parallel:** European Parliament Proceedings Parallel Corpus 1996-2011
-	* [Parallel Corpus Polish-English 01/2007-11/2011](http://www.statmt.org/europarl/)
+	* source: [Parallel Corpus Polish-English 01/2007-11/2011](http://www.statmt.org/europarl/)
+	* project copies: [/text/gov/multi/](https://github.com/jbrown544/interlingual-topic-modeling/tree/main/text/gov/multi)
 
 ### French Language Sample Analysis
 
