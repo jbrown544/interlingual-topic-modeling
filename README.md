@@ -106,7 +106,7 @@ Models are depicted using pyLDAvis dimensional reductions. This allows models us
 ### French Language Sample Analysis
 
 <figure>
-<img src="https://raw.githubusercontent.com/jbrown544/interlingual-topic-modeling/main/img/327px-'From_the_Earth_to_the_Moon'_by_Henri_de_Montaut_39.jpg" height="400" width="300"/>
+<img src="./img/327px-'From_the_Earth_to_the_Moon'_by_Henri_de_Montaut_39.jpg" height="400" width="300"/>
 <figcaption>Henri de Montaut, <a href="https://commons.wikimedia.org/w/index.php?curid=11412182">Public Domain</a>, via Wikimedia Commons</figcaption>
 </figure>
 
@@ -120,12 +120,12 @@ This sample consists of seven works by the French author Jules Verne. These are 
 + [The Blockade Runners](https://en.wikipedia.org/wiki/The_Blockade_Runners#Plot_introduction)
 + [The Mutineers of the Bounty](https://en.wikipedia.org/wiki/The_Mutineers_of_the_Bounty)
 
-TODO
+![Image](./img/viz/french.gif)
 
 ### Spanish Language Sample Analysis
 
 <figure>
-<img src="https://raw.githubusercontent.com/jbrown544/interlingual-topic-modeling/main/img/109899_newsstand_300.jpg" width="300"/>
+<img src="./img/109899_newsstand_300.jpg" width="300"/>
 <figcaption>Melbeans, <a href="https://commons.wikimedia.org/wiki/File:109899_newsstand_300.jpg">Public Domain</a>, via Wikimedia Commons</figcaptiion>
 </figure>
 
@@ -134,7 +134,7 @@ TODO
 ### English-Polish Parallel Language Sample Analysis
 
 <figure>
-<img src="https://raw.githubusercontent.com/jbrown544/interlingual-topic-modeling/main/img/Leeuwarden%2C_de_vlaggen_van_de_Europese_Unie_op_de_Stationsweg_IMG_3726_2018-05-21_12.47.jpg" width="300"/>
+<img src="./img/Leeuwarden%2C_de_vlaggen_van_de_Europese_Unie_op_de_Stationsweg_IMG_3726_2018-05-21_12.47.jpg" width="300"/>
 <figcaption>Michielverbeek, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption>
 </figure>
 
@@ -149,6 +149,6 @@ TODO
 
 ## More Information
 
-[Project References](https://github.com/jbrown544/interlingual-topic-modeling/blob/main/REFERENCES.md)
+[Project References](./REFERENCES.md)
 
 Authored with [ghostwriter](https://wereturtle.github.io/ghostwriter/index.html)
