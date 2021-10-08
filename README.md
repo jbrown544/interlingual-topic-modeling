@@ -124,7 +124,6 @@ These are the works listed in length order (longest to shortest) and linked to t
 
 #### Exploratory Data Analysis
 
-
 | Measure | # |
 |:--|--:|
 | Documents | 7 |
@@ -132,8 +131,7 @@ These are the works listed in length order (longest to shortest) and linked to t
 | Sentences | 25,795 |
 | Tokens | 441,016 |
 | Words | 335,790 |
-| Unique Words |25,396 |
-
+| Unique Words | 25,396 |
 
 |Statistic | # |
 |:--|--:|
@@ -143,13 +141,15 @@ These are the works listed in length order (longest to shortest) and linked to t
 | Avg. Words/Document | 47,970.0 |
 | Avg. Sentences/Document | 3,685.0 |
 
+[POS Tags](https://universaldependencies.org/docs/u/pos/)
+
 ![Image](img/eda/french_pos.png)
 
 ![Image](img/eda/french_nouns.png)
 
 ![Image](img/eda/french_verbs.png)
 
-![Image](./img/viz/french.gif)
+![Image](./img/viz/french.gif "Topic Model Visualization")
 
 ### Spanish Language Sample Analysis
 
@@ -158,7 +158,31 @@ These are the works listed in length order (longest to shortest) and linked to t
 <figcaption>Melbeans, <a href="https://commons.wikimedia.org/wiki/File:109899_newsstand_300.jpg">Public Domain</a>, via Wikimedia Commons</figcaptiion>
 </figure>
 
-TODO
+| Measure | # |
+|:--|--:|
+| Documents | 30,000 |
+| Parts-of-Speech | 16 |
+| Sentences | 58,768 |
+| Tokens | 860,668 |
+| Words | 669,628 |
+| Unique Words | 54,132 |
+
+|Statistic | # |
+|:--|--:|
+| Avg. Tokens/Sentence | 14.65 |
+| Avg. Words/Sentence | 11.39 |
+| Avg. Tokens/Document | 28.69 |
+| Avg. Words/Document | 22.32 |
+| Avg. Sentences/Document | 1.96 |
+
+[POS Tags](https://universaldependencies.org/docs/u/pos/)
+
+![Image](img/eda/spanish_pos.png)
+
+![Image](img/eda/spanish_nouns.png)
+
+![Image](img/eda/spanish_verbs.png)
+
 
 ### English-Polish Parallel Language Sample Analysis
 
@@ -167,7 +191,30 @@ TODO
 <figcaption>Michielverbeek, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption>
 </figure>
 
-TODO
+| Measure | English # | Polish # |
+|:--|--:|--:|
+| Documents | 150,000 | 150,000 |
+| Parts-of-Speech | 15 | 17 |
+| Sentences | 200,287 | 304,388 |
+| Tokens | 4,119,913 | 3,581,908 |
+| Words | 3,509,689 | 2,928,209 |
+| Unique Words | 34,083 | 102,810 |
+
+|Statistic | English # | Polish # |
+|:--|--:|--:|
+| Avg. Tokens/Sentence | 20.57 | 11.77 |
+| Avg. Words/Sentence | 17.52 | 9.62 |
+| Avg. Tokens/Document | 27.47 | 23.88 |
+| Avg. Words/Document | 23.4 | 19.52 |
+| Avg. Sentences/Document | 1.34 | 2.03 |
+
+[POS Tags](https://universaldependencies.org/docs/u/pos/)
+
+| English | Polish |
+|:-:|:-:|
+| ![Image](img/eda/english_pos.png) | ![Image](img/eda/polish_pos.png) |
+| ![Image](img/eda/english_nouns.png) | ![Image](img/eda/polish_nouns.png)
+| ![Image](img/eda/english_verbs.png) | ![Image](img/eda/polish_verbs.png)
 
 ## Ideas for Further Exploration
 
