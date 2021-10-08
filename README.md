@@ -6,7 +6,7 @@
 
 In this exploration, the primary goal is to discover methods for applying modern NLP thematic modeling to generate intuition over non-English language corpora without requiring source document translation. Secondary goals are to discover techniques for parameter optimization and to develop reusable interlingual tools portable across language sources.  Inputs into the processes will be unstructured therefore the design will make few assumptions allowing for flexibility with varied sources and languages.
 
-![pyLDAvis Visualization](./img/header.png "Topic Model Visualization")
+![Image](./img/header.png "Topic Model Visualization")
 
 ## Methods and Tooling
 
@@ -14,7 +14,7 @@ The method applied to explore the project objective is to stack a series of soft
 
 After describing these steps and associated tools below, their application will be demonstrated to determine their efficacy for this project's objective. The intention of describing the tools and methods is to enable further exploration beyond the demonstrations given. After the explanation of these tools and their demonstration, ideas for further exploration will be offered based upon the experiences of this project. 
 
-The Python notebook implementing these steps and tools is contained in this repository as [Interlingual\_Topic\_Modeling.ipynb](https://github.com/jbrown544/interlingual-topic-modeling/blob/main/Interlingual_Topic_Modeling.ipynb).
+The Python notebook implementing these steps and tools is contained in this repository as [Interlingual\_Topic\_Modeling.ipynb](./Interlingual_Topic_Modeling.ipynb).
 
 ## Software Tools
 
@@ -31,6 +31,10 @@ The Python notebook implementing these steps and tools is contained in this repo
 **pyLDAvis** provides visualizations which easily integrate with Gensim models. These visualizations will be used to explore the created models. These visualizations will also be the view into language translations.
 
 A **Google Colab** notebook is used to contain and execute the source code for this project. Given this processing load is excessive for the resources made available to Colab, it is advisable to connect Colab to a [local Jupyter instance](https://research.google.com/colaboratory/local-runtimes.html) or execute this notebook on a suitably powerful workstation in Jupyter.
+
+Be sure to take advantage of the "Table of contents" navigation available within this Google Colab. You will find various tools in functions in the beginning portion follwed by three demonstrations. The demonstrations follow similar hierarchical templates to allow sections to be more easily located.
+
+![Image](./img/nav.png "Table of contents")
 
 **Google Cloud Translation** is used to augment the discovered features through term translation. To run the translations and generate a local repository of cached translation terms, **you will need to establish your own Google Cloud account and include your own authentication key in the ```/keys``` folder of the project**. There is cost associated with cloud translations which at the time of this writing allowed for 500K chars/month free then $20(USD) per 1M chars/month thereafter. A caching facility built into translations for this project helps manage expense if you retain copies of the cache file ```xlat.json```. For an idea of potential expense, this project was developed over two billing cycles (1M free chars) and overage charges were less than $10(USD)
 
@@ -95,13 +99,13 @@ Models are depicted using pyLDAvis dimensional reductions. This allows models us
 
 1. **French:** ABU la Bibliothèque Universelle 
 	* source: [7 works in French by Jules Verne](http://abu.cnam.fr/BIB/)
-	* project copies: [/text/books/fr/](https://github.com/jbrown544/interlingual-topic-modeling/tree/main/text/books/fr)
+	* project copies: [/text/books/fr/](./text/books/fr)
 1. **Spanish:** Corpora Collection Leipzig University
 	* source: [30K 2019 Spanish RSS News Samples](https://wortschatz.uni-leipzig.de/en/download/Spanish#spa-ar_web_2019)
-	* project copies: [/text/news/es/](https://github.com/jbrown544/interlingual-topic-modeling/tree/main/text/news/es)
+	* project copies: [/text/news/es/](./news/es)
 1. **Polish/English Parallel:** European Parliament Proceedings Parallel Corpus 1996-2011
 	* source: [Parallel Corpus Polish-English 01/2007-11/2011](http://www.statmt.org/europarl/)
-	* project copies: [/text/gov/multi/](https://github.com/jbrown544/interlingual-topic-modeling/tree/main/text/gov/multi)
+	* project copies: [/text/gov/multi/](./text/gov/multi)
 
 ## French Language Sample Analysis
 
@@ -122,7 +126,7 @@ These are the works listed in length order (longest to shortest) and linked to t
 + [The Blockade Runners](https://en.wikipedia.org/wiki/The_Blockade_Runners#Plot_introduction)
 + [The Mutineers of the Bounty](https://en.wikipedia.org/wiki/The_Mutineers_of_the_Bounty)
 
-Building these seven works into our corpus and performing data analysis on their combined content, we can see there are over 25K unique words (alphabetic tokens) taken from over 335K words. There are around the same number of sentences as unique words.
+Building these seven works into our corpus and performing exploratory text analysis on their combined content, we can see there are over 25K unique words (alphabetic tokens) taken from over 335K words. There are around the same number of sentences as unique words.
 
 We can see these works average about 13 words per sentence. The document averages are influenced by the two shortest works  being notably shorter than the others, but having that contrast could be helpful.
 
@@ -157,17 +161,19 @@ In the 17 parts-of-speech detected, there are notable occurrences of adpositions
 
 ![Image](img/eda/french_pos.png)
 
-The most common nouns detected often describe the fictional characters, time, measurement, or places. These works are often about travel with science fiction themes relevant to the time they were written.
+The most common nouns detected often describe the fictional characters, time, measurement, or places. These works are often about travel with science fiction themes relevant to the time they were written. Interestingly, though the parts-of-speech plot indicated far more nouns than proper nouns, here we see several what appear to be proper nouns in the most common plot. 
 
 ![Image](img/eda/french_nouns.png)
 
-The most common verbs detected indicate significant conversation and activity.
+The most common verbs detected in these fictional works indicate significant conversation and activity.
 
 ![Image](img/eda/french_verbs.png)
 
 ### Parameter Estimation
 
-When performing evaluations seeking a meaningful number of topics to model in this corpus, there appeared to be a knee developing around 40 when using the T topic cutoff for an HDP model. For more on the process of estimating a good value for this parameter, see the [project notebook](./Interlingual_Topic_Modeling.ipynb).
+When performing evaluations seeking a meaningful number of topics to model in this corpus, there appeared to be a knee developing around 40 when using the T topic cutoff for an HDP model. 
+
+For more on the process of estimating a good value for this parameter, see the [project notebook](./Interlingual_Topic_Modeling.ipynb).
 
 ![Image](img/evals/french_hdp_T_2.png)
 
@@ -176,11 +182,13 @@ When performing evaluations seeking a meaningful number of topics to model in th
 In this animation of our topic model visualization, it appears the seven works included have themselves become the most prevalent topics. Each of the large bubbles top terms match characters, places, and things explained in the plot summaries linked earlier. Of particular interest is bubble 6 which lies outside the cluster of the other works. This work appears to be    the second to smallest work about blockade runners during the American Civil War which is possibly more historical than some of the other fictional accounts. Also note, the topical bubble sizes mostly correlate with the size of their respective works. Lastly, note that the six works that form a cluster surround many far smaller topics whose centrality may indicate those topics are thematically bounded by the ideas present in the works themselves. 
 
 Opening the [project notebook](./Interlingual_Topic_Modeling.ipynb) allows interaction with this visualization for exploration of the topics. Be sure to use the "Open in Colab" button at top to enable the visualizations because the GitHub 
-source viewer does not render them. Also, remember to expand the left "Table of contents" panel to quickly navigate the notebook's structure.
+source viewer does not display them. Also, remember to expand the left "Table of contents" panel to quickly navigate the notebook's structure.
 
 ![Image](./img/viz/french.gif)
 
 ## Spanish Language Sample Analysis
+
+This sample contains 30K Spanish news headlines gathered from such sources as RSS feeds.
 
 <figure>
 <img src="./img/109899_newsstand_300.jpg" width="300"/>
@@ -188,6 +196,8 @@ source viewer does not render them. Also, remember to expand the left "Table of 
 </figure>
 
 ### Exploratory Data Analysis
+
+Treating these headlines as individual documents and performing exploratory text analysis, we can see there are almost 2 sentences per headline with an average of just over 11 words (alphabetic tokens) per sentence. This gives us the just over 22 average words per document.
 
 ---
 
@@ -212,14 +222,36 @@ source viewer does not render them. Also, remember to expand the left "Table of 
 
 ---
 
+In the 16 parts-of-speech detected, there are notable occurrences of adpositions, determiners, nouns, and verbs. The ratio of proper nouns to nouns appears be higher than in the earlier lengthy fictional works, but information-packed news headlines may explain this.
+
 [POS Tags](https://universaldependencies.org/docs/u/pos/)
 
 ![Image](img/eda/spanish_pos.png)
 
+The most common nouns in this Spanish news headline sample reflect many mentions of time, place, and terms that may be affiliated with governance.
+
 ![Image](img/eda/spanish_nouns.png)
+
+The most common verbs in these news headlines involve actions associated with reporting (said, watch, he pointed, assured, reported, explained, find, added, He says). There are are also various words that appear to be variations of "have."
 
 ![Image](img/eda/spanish_verbs.png)
 
+### Parameter Estimation
+
+When performing evaluations seeking a meaningful number of topics to model in this corpus, coherence diminished as topics were added for an HDP model. There appeared to be a plateau beginning around the 20 topic point while still reflecting a good coherence score. A value of T=22 was modeled for the visualization.
+
+For more on the process of estimating a good value for this parameter, see the [project notebook](./Interlingual_Topic_Modeling.ipynb).
+
+![Image](img/evals/spanish_hdp_T_3.png)
+
+### Model Visualization
+
+In this animation of our topic model visualization, we can see the 22 topics modeled disperse evenly and appear to be relatively proportional in size. With tens of thousands of headlines reduced to 22 topics, these topics are likely to include concepts that may appear quite unrelated in human interpretation. For example, adjusting the relevance slider to 0.5 for an even mix of term frequency and term relevance, we can observe terms in topic 8 including thunberg (Greta Thunberg?), greenpeace, censorship, newspapers, Francoism, and pinochet (Augusto Pinochet?). Exploring the topics in this corpora is not as simple as the earlier French example, but developing themes can be perceived within these topics.
+
+Opening the [project notebook](./Interlingual_Topic_Modeling.ipynb) allows interaction with this visualization for exploration of the topics. Be sure to use the "Open in Colab" button at top to enable the visualizations because the GitHub 
+source viewer does not display them. Also, remember to expand the left "Table of contents" panel to quickly navigate the notebook's structure.
+
+![Image](./img/viz/spanish.gif)
 
 ## English-Polish Parallel Language Sample Analysis
 
