@@ -103,14 +103,14 @@ Models are depicted using pyLDAvis dimensional reductions. This allows models us
 	* source: [Parallel Corpus Polish-English 01/2007-11/2011](http://www.statmt.org/europarl/)
 	* project copies: [/text/gov/multi/](https://github.com/jbrown544/interlingual-topic-modeling/tree/main/text/gov/multi)
 
-### French Language Sample Analysis
+## French Language Sample Analysis
+
+This sample consists of seven works by the French author Jules Verne.
 
 <figure>
 <img src="./img/327px-'From_the_Earth_to_the_Moon'_by_Henri_de_Montaut_39.jpg" height="400" width="300"/>
 <figcaption>Henri de Montaut, <a href="https://commons.wikimedia.org/w/index.php?curid=11412182">Public Domain</a>, via Wikimedia Commons</figcaption>
 </figure>
-
-This sample consists of seven works by the French author Jules Verne.
 
 These are the works listed in length order (longest to shortest) and linked to their Wikipedia plot summaries:
 	
@@ -122,7 +122,7 @@ These are the works listed in length order (longest to shortest) and linked to t
 + [The Blockade Runners](https://en.wikipedia.org/wiki/The_Blockade_Runners#Plot_introduction)
 + [The Mutineers of the Bounty](https://en.wikipedia.org/wiki/The_Mutineers_of_the_Bounty)
 
-#### Exploratory Data Analysis
+### Exploratory Data Analysis
 
 | Measure | # |
 |:--|--:|
@@ -149,14 +149,16 @@ These are the works listed in length order (longest to shortest) and linked to t
 
 ![Image](img/eda/french_verbs.png)
 
-![Image](./img/viz/french.gif "Topic Model Visualization")
+![Image](./img/viz/french.gif)
 
-### Spanish Language Sample Analysis
+## Spanish Language Sample Analysis
 
 <figure>
 <img src="./img/109899_newsstand_300.jpg" width="300"/>
 <figcaption>Melbeans, <a href="https://commons.wikimedia.org/wiki/File:109899_newsstand_300.jpg">Public Domain</a>, via Wikimedia Commons</figcaptiion>
 </figure>
+
+### Exploratory Data Analysis
 
 | Measure | # |
 |:--|--:|
@@ -184,12 +186,14 @@ These are the works listed in length order (longest to shortest) and linked to t
 ![Image](img/eda/spanish_verbs.png)
 
 
-### English-Polish Parallel Language Sample Analysis
+## English-Polish Parallel Language Sample Analysis
 
 <figure>
 <img src="./img/Leeuwarden%2C_de_vlaggen_van_de_Europese_Unie_op_de_Stationsweg_IMG_3726_2018-05-21_12.47.jpg" width="300"/>
 <figcaption>Michielverbeek, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption>
 </figure>
+
+### Exploratory Data Analysis
 
 | Measure | English # | Polish # |
 |:--|--:|--:|
