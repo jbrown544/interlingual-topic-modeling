@@ -110,7 +110,9 @@ Models are depicted using pyLDAvis dimensional reductions. This allows models us
 <figcaption>Henri de Montaut, <a href="https://commons.wikimedia.org/w/index.php?curid=11412182">Public Domain</a>, via Wikimedia Commons</figcaption>
 </figure>
 
-This sample consists of seven works by the French author Jules Verne. These are the works listed in length order (longest to shortest) and linked to their Wikipedia plot summaries:
+This sample consists of seven works by the French author Jules Verne.
+
+These are the works listed in length order (longest to shortest) and linked to their Wikipedia plot summaries:
 	
 + [Five Weeks in a Balloon](https://en.wikipedia.org/wiki/Five_Weeks_in_a_Balloon#Plot_summary)
 + [Around the World in Eighty Days](https://en.wikipedia.org/wiki/Around_the_World_in_Eighty_Days#Plot)
@@ -119,6 +121,33 @@ This sample consists of seven works by the French author Jules Verne. These are 
 + [The Begum's Fortune](https://en.wikipedia.org/wiki/The_Begum%27s_Fortune#Plot_summary)
 + [The Blockade Runners](https://en.wikipedia.org/wiki/The_Blockade_Runners#Plot_introduction)
 + [The Mutineers of the Bounty](https://en.wikipedia.org/wiki/The_Mutineers_of_the_Bounty)
+
+#### Exploratory Data Analysis
+
+
+| Measure | # |
+|:--|--:|
+| Documents | 7 |
+| Parts-of-Speech | 17 |
+| Sentences | 25,795 |
+| Tokens | 441,016 |
+| Words | 335,790 |
+| Unique Words |25,396 |
+
+
+|Statistic | # |
+|:--|--:|
+| Avg. Tokens/Sentence | 17.1 |
+| Avg. Words/Sentence | 13.02 |
+| Avg. Tokens/Document | 63,002.29 |
+| Avg. Words/Document | 47,970.0 |
+| Avg. Sentences/Document | 3,685.0 |
+
+![Image](img/eda/french_pos.png)
+
+![Image](img/eda/french_nouns.png)
+
+![Image](img/eda/french_verbs.png)
 
 ![Image](./img/viz/french.gif)
 
