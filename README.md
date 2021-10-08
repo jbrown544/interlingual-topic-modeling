@@ -122,7 +122,13 @@ These are the works listed in length order (longest to shortest) and linked to t
 + [The Blockade Runners](https://en.wikipedia.org/wiki/The_Blockade_Runners#Plot_introduction)
 + [The Mutineers of the Bounty](https://en.wikipedia.org/wiki/The_Mutineers_of_the_Bounty)
 
+Building these seven works into our corpus and performing data analysis on their combined content, we can see there are over 25K unique words (alphabetic tokens) taken from over 335K words. There are around the same number of sentences as unique words.
+
+We can see these works average about 13 words per sentence. The document averages are influenced by the two shortest works  being notably shorter than the others, but having that contrast could be helpful.
+
 ### Exploratory Data Analysis
+
+---
 
 | Measure | # |
 |:--|--:|
@@ -133,6 +139,8 @@ These are the works listed in length order (longest to shortest) and linked to t
 | Words | 335,790 |
 | Unique Words | 25,396 |
 
+---
+
 |Statistic | # |
 |:--|--:|
 | Avg. Tokens/Sentence | 17.1 |
@@ -141,13 +149,34 @@ These are the works listed in length order (longest to shortest) and linked to t
 | Avg. Words/Document | 47,970.0 |
 | Avg. Sentences/Document | 3,685.0 |
 
+---
+
+In the 17 parts-of-speech detected, there are notable occurrences of adpositions, nouns, and verbs.
+
 [POS Tags](https://universaldependencies.org/docs/u/pos/)
 
 ![Image](img/eda/french_pos.png)
 
+The most common nouns detected often describe the fictional characters, time, measurement, or places. These works are often about travel with science fiction themes relevant to the time they were written.
+
 ![Image](img/eda/french_nouns.png)
 
+The most common verbs detected indicate significant conversation and activity.
+
 ![Image](img/eda/french_verbs.png)
+
+### Parameter Estimation
+
+When performing evaluations seeking a meaningful number of topics to model in this corpus, there appeared to be a knee developing around 40 when using the T topic cutoff for an HDP model. For more on the process of estimating a good value for this parameter, see the [project notebook](./Interlingual_Topic_Modeling.ipynb).
+
+![Image](img/evals/french_hdp_T_2.png)
+
+### Model Visualization
+
+In this animation of our topic model visualization, it appears the seven works included have themselves become the most prevalent topics. Each of the large bubbles top terms match characters, places, and things explained in the plot summaries linked earlier. Of particular interest is bubble 6 which lies outside the cluster of the other works. This work appears to be    the second to smallest work about blockade runners during the American Civil War which is possibly more historical than some of the other fictional accounts. Also note, the topical bubble sizes mostly correlate with the size of their respective works. Lastly, note that the six works that form a cluster surround many far smaller topics whose centrality may indicate those topics are thematically bounded by the ideas present in the works themselves. 
+
+Opening the [project notebook](./Interlingual_Topic_Modeling.ipynb) allows interaction with this visualization for exploration of the topics. Be sure to use the "Open in Colab" button at top to enable the visualizations because the GitHub 
+source viewer does not render them. Also, remember to expand the left "Table of contents" panel to quickly navigate the notebook's structure.
 
 ![Image](./img/viz/french.gif)
 
@@ -160,6 +189,8 @@ These are the works listed in length order (longest to shortest) and linked to t
 
 ### Exploratory Data Analysis
 
+---
+
 | Measure | # |
 |:--|--:|
 | Documents | 30,000 |
@@ -169,6 +200,8 @@ These are the works listed in length order (longest to shortest) and linked to t
 | Words | 669,628 |
 | Unique Words | 54,132 |
 
+---
+
 |Statistic | # |
 |:--|--:|
 | Avg. Tokens/Sentence | 14.65 |
@@ -176,6 +209,8 @@ These are the works listed in length order (longest to shortest) and linked to t
 | Avg. Tokens/Document | 28.69 |
 | Avg. Words/Document | 22.32 |
 | Avg. Sentences/Document | 1.96 |
+
+---
 
 [POS Tags](https://universaldependencies.org/docs/u/pos/)
 
@@ -195,7 +230,9 @@ These are the works listed in length order (longest to shortest) and linked to t
 
 ### Exploratory Data Analysis
 
-| Measure | English # | Polish # |
+---
+
+| Measure | English# | Polish# |
 |:--|--:|--:|
 | Documents | 150,000 | 150,000 |
 | Parts-of-Speech | 15 | 17 |
@@ -204,13 +241,17 @@ These are the works listed in length order (longest to shortest) and linked to t
 | Words | 3,509,689 | 2,928,209 |
 | Unique Words | 34,083 | 102,810 |
 
-|Statistic | English # | Polish # |
+---
+
+|Statistic | English# | Polish# |
 |:--|--:|--:|
 | Avg. Tokens/Sentence | 20.57 | 11.77 |
 | Avg. Words/Sentence | 17.52 | 9.62 |
 | Avg. Tokens/Document | 27.47 | 23.88 |
 | Avg. Words/Document | 23.4 | 19.52 |
 | Avg. Sentences/Document | 1.34 | 2.03 |
+
+---
 
 [POS Tags](https://universaldependencies.org/docs/u/pos/)
 
@@ -225,7 +266,7 @@ These are the works listed in length order (longest to shortest) and linked to t
 1. An interesting idea for additional exploration is to retrofit the processing pipeline introduced here with the library [tomotopy](https://bab2min.github.io/tomotopy/v0.12.2/en/). According to this [post by Eduardo Coronado Sroka](https://towardsdatascience.com/dont-be-afraid-of-nonparametric-topic-models-part-2-python-e5666db347a), Gensim can be difficult when using HDP and there may be advantages with tomotopy. Initial investigation indicated there [may be code](https://github.com/bab2min/tomotopy/blob/main/examples/lda_visualization.py) to help visualize tomotopy output using pyLDAvis.
 2. The JSON cache file currently persisting term translations could be modified to use a shared repository of translations such as a database service. Maintaining the information in a file is not always convenient. Interrogating cloud APIs for the translation of individual terms can become expensive.
 3. The parallel language sample used in this exploration did not generate ideal topic coherence. Investigating other translations such as public domain books may prove interesting for comparing topic models generated in works with equivalent meaning.
-4. Performing machine translations on work then applying this process also offers interesting territory for exploration. This is especially the case if the machine translation product introduces noise into the information potentially reducing coherence.
+4. Performing machine pre-translations on texts then applying the process developed here for comparing parallel corpora also offers interesting territory for exploration. This is especially the case to detect if the machine translation product introduces entropy potentially reducing coherence.
 
 ## More Information
 
