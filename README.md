@@ -14,7 +14,7 @@ The method applied to explore the project objective is to stack a series of soft
 
 After describing these steps and associated tools below, their application will be demonstrated to determine their efficacy for this project's objective. The intention of describing the tools and methods is to enable further exploration beyond the demonstrations given. After the explanation of these tools and their demonstration, ideas for further exploration will be offered based upon the experiences of this project. 
 
-The Python notebook implementing these steps and tools is contained in this repository as [Interlingual\_Topic\_Modeling.ipynb](./Interlingual_Topic_Modeling.ipynb).
+The Python project notebook implementing these steps and tools is contained in this repository as [Interlingual\_Topic\_Modeling.ipynb](./Interlingual_Topic_Modeling.ipynb).
 
 ## Software Tools
 
@@ -30,15 +30,15 @@ The Python notebook implementing these steps and tools is contained in this repo
 
 **pyLDAvis** provides visualizations which easily integrate with Gensim models. These visualizations will be used to explore the created models. These visualizations will also be the view into language translations.
 
-A **Google Colab** notebook is used to contain and execute the source code for this project. Given this processing load is excessive for the resources made available to Colab, it is advisable to connect Colab to a [local Jupyter instance](https://research.google.com/colaboratory/local-runtimes.html) or execute this notebook on a suitably powerful workstation in Jupyter.
+A **Google Colab** [project notebook](./Interlingual_Topic_Modeling.ipynb) is used to contain and execute the source code for this project. Given this processing load is excessive for the resources made available to Colab, it is advisable to connect Colab to a [local Jupyter instance](https://research.google.com/colaboratory/local-runtimes.html) or execute the notebook on a suitably powerful workstation in Jupyter.
 
-Be sure to take advantage of the "Table of contents" navigation available within this Google Colab. You will find various tools in functions in the beginning portion follwed by three demonstrations. The demonstrations follow similar hierarchical templates to allow sections to be more easily located.
+Be sure to take advantage of the "Table of contents" navigation available within the Google Colab [project notebook](./Interlingual_Topic_Modeling.ipynb). You will find various utility functions in the beginning portion followed by three demonstrations with text in several languages. The demonstrations are organized in similar hierarchies to allow sections to be easily located.
 
 ![Image](./img/nav.png "Table of contents")
 
 **Google Cloud Translation** is used to augment the discovered features through term translation. To run the translations and generate a local repository of cached translation terms, **you will need to establish your own Google Cloud account and include your own authentication key in the ```/keys``` folder of the project**. There is cost associated with cloud translations which at the time of this writing allowed for 500K chars/month free then $20(USD) per 1M chars/month thereafter. A caching facility built into translations for this project helps manage expense if you retain copies of the cache file ```xlat.json```. For an idea of potential expense, this project was developed over two billing cycles (1M free chars) and overage charges were less than $10(USD)
 
-## Steps to Analysis
+## Analysis Steps
 
 Here are the overall steps applied in processing each language for high level context:
 
@@ -63,9 +63,9 @@ After processing texts in a stream with the ```pipe()``` method on the given lan
 
 A general EDA function computes various useful statistics over the text input. The statistics provided were loosely based upon a demonstration of the general EDA capabilities of the tool Splunk. The EDA independently processes using its own language model pipeline as it takes measure of the entire corpora versus the subset used by processing.
 
-See the Google Colab notebook subsection "Language-Neutral Processing Pipeline" for processing functions. A function is available using Gensim's simple parser for comparison purposes.
+See the Google Colab [project notebook](./Interlingual_Topic_Modeling.ipynb) subsection "Language-Neutral Processing Pipeline" for processing functions. A function is available using Gensim's simple parser for comparison purposes.
 
-See the Google Colab notebook subsection "Text Exploratory Data Analysis (EDA)" for the EDA function.
+See the Google Colab [project notebook](./Interlingual_Topic_Modeling.ipynb) subsection "Text Exploratory Data Analysis (EDA)" for the EDA function.
 
 ### 2. Modeling
 
@@ -87,11 +87,11 @@ Translations are integrated for visualization by creating an alternate Gensim di
 
 #### Note: Caching
 
-Because there are costs associated with the cloud translation API, as features are translated they are persisted in a JSON cache file. This file contains dictionaries for each language pair developed. Each language pair dictionary contains individual terms previously translated (source vs. target language). If a project notebook is being executed in an ephemeral environment (such as Google Colab), remember to download a permanent copy of the cache files in the ```\caches``` folder. Generating the same translations repeatedly using the cloud API can become unnecessarily expensive otherwise.
+Because there are costs associated with the cloud translation API, as features are translated they are persisted in a JSON cache file. This file contains dictionaries for each language pair developed. Each language pair dictionary contains individual terms previously translated (source vs. target language). If the [project notebook](./Interlingual_Topic_Modeling.ipynb) is being executed in an ephemeral environment (such as Google Colab), remember to download a permanent copy of the cache files in the ```\caches``` folder. Generating the same translations repeatedly using the cloud API can become unnecessarily expensive otherwise.
 
 ### 5. Visualization and Analysis
 
-Models are depicted using pyLDAvis dimensional reductions. This allows models usually exist with dimensional impossible to conceptualize to be be viewed on screen. These may be viewed by opening a notebook in either Google Colab or the nbviewer link accessible from with GitHub. The GitHub code viewer does show cell outputs, but does not show these visualizations which will appear as a blank output cell. [Here](https://www.youtube.com/watch?v=IksL96ls4o0) is an excellent video which helps explain the operation of pyLDAvis. It demonstrates an older version of the tool, but provides insight into how latent topics may be analyzed in a model.
+Models are depicted using pyLDAvis dimensional reductions. This allows models usually exist with dimensional impossible to conceptualize to be be viewed on screen. These may be viewed by opening the [project notebook](./Interlingual_Topic_Modeling.ipynb) in either Google Colab or the nbviewer link accessible from with GitHub. The GitHub code viewer does show cell outputs, but does not show these visualizations which will appear as a blank output cell. [Here](https://www.youtube.com/watch?v=IksL96ls4o0) is an excellent video which helps explain the operation of pyLDAvis. It demonstrates an older version of the tool, but provides insight into how latent topics may be analyzed in a model.
 
 # Demonstrations
 
@@ -102,7 +102,7 @@ Models are depicted using pyLDAvis dimensional reductions. This allows models us
 	* project copies: [/text/books/fr/](./text/books/fr)
 1. **Spanish:** Corpora Collection Leipzig University
 	* source: [30K 2019 Spanish RSS News Samples](https://wortschatz.uni-leipzig.de/en/download/Spanish#spa-ar_web_2019)
-	* project copies: [/text/news/es/](./news/es)
+	* project copies: [/text/news/es/](./text/news/es)
 1. **Polish/English Parallel:** European Parliament Proceedings Parallel Corpus 1996-2011
 	* source: [Parallel Corpus Polish-English 01/2007-11/2011](http://www.statmt.org/europarl/)
 	* project copies: [/text/gov/multi/](./text/gov/multi)
