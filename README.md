@@ -185,10 +185,10 @@ For more on the process of estimating a good value for this parameter, see the [
 
 In this animation of our topic model visualization, it appears the seven works included have themselves become the most prevalent topics. Each of the large bubbles' top terms match characters, places, and things explained in the plot summaries linked earlier. Of particular interest is bubble 6 which lies outside the cluster of the other works. This work appears to be    the second to smallest work about blockade runners during the American Civil War which is possibly more historical than some of the other fictional accounts. Also note, the topical bubble sizes mostly correlate with the size of their respective works. Lastly, note that the six works that form a cluster surround many far smaller topics whose centrality may indicate those topics are thematically bounded by the ideas present in the works themselves. 
 
+![Image](./img/viz/french.gif)
+
 Opening the [project notebook](./Interlingual_Topic_Modeling.ipynb) allows interaction with this visualization for exploration of the topics. Be sure to use the "Open in Colab" button at top to enable the visualizations because the GitHub 
 source viewer does not display them. Also, remember to expand the left "Table of contents" panel to quickly navigate the notebook's structure.
-
-![Image](./img/viz/french.gif)
 
 ## Spanish Language Sample Analysis
 
@@ -252,10 +252,10 @@ For more on the process of estimating a good value for this parameter, see the [
 
 In this animation of our topic model visualization, we can see the 22 topics modeled disperse evenly and appear to be relatively proportional in size. With tens of thousands of headlines reduced to 22 topics, these topics are likely to include concepts that may appear quite unrelated in human interpretation. For example, adjusting the relevance slider to 0.5 for an even mix of term frequency and term relevance, we can observe terms in topic 8 including thunberg (Greta Thunberg?), greenpeace, censorship, newspapers, Francoism, and pinochet (Augusto Pinochet?). Exploring the topics in this corpora is not as simple as the earlier French example, but developing themes can be perceived within these topics.
 
+![Image](./img/viz/spanish.gif)
+
 Opening the [project notebook](./Interlingual_Topic_Modeling.ipynb) allows interaction with this visualization for exploration of the topics. Be sure to use the "Open in Colab" button at top to enable the visualizations because the GitHub 
 source viewer does not display them. Also, remember to expand the left "Table of contents" panel to quickly navigate the notebook's structure.
-
-![Image](./img/viz/spanish.gif)
 
 ## English-Polish Parallel Language Sample Analysis
 
@@ -348,7 +348,8 @@ The parallels between topics themselves in the models are more difficult to disc
 	* Topic 64 - agriculture issues?
 	* Topic 75 - economic or capital issues?
 
-To explore topics or experiment further, use the interactive interface available by opening the [project notebook](./Interlingual_Topic_Modeling.ipynb) in Google Colab then using "Table of contents" panel (upper left - see earlier instructions) to navigate to the final visualizations of the notebook.
+Opening the [project notebook](./Interlingual_Topic_Modeling.ipynb) allows interaction with this visualization for exploration of the topics. Be sure to use the "Open in Colab" button at top to enable the visualizations because the GitHub 
+source viewer does not display them. Also, remember to expand the left "Table of contents" panel to quickly navigate the notebook's structure.
 
 ## Ideas for Further Exploration
 
