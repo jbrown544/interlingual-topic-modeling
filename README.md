@@ -341,13 +341,13 @@ The parallels between topics themselves in the models are more difficult to disc
 
 + English
  	* Topic 4 - technology investment issues?
-	* Topic 69 - conflict or threat issues?
-	* Topic 70 - sugar or fruit production issues?
+	* Topic 69 - conflict / threat issues?
+	* Topic 70 - sugar / fruit production issues?
 + Polish
 	* Topic 36 - climate issues?
 	* Topic 64 - agriculture issues?
 	* Topic 75 - economic or capital issues?
-	* 
+
 To explore topics or experiment further, use the interactive interface available by opening the [project notebook](./Interlingual_Topic_Modeling.ipynb) in Google Colab then using "Table of contents" panel (upper left - see earlier instructions) to navigate to the final visualizations of the notebook.
 
 ## Ideas for Further Exploration
