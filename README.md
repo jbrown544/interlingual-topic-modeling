@@ -333,7 +333,11 @@ Given this interesting parallel in the coherence evaluation, the LDA model (vers
 
 The interesting parallels observed in the coherence evaluation continue in visualization of the underlying models. In the upper visualization for the English model, a circular pattern backed by three satellites and bordered in the front by a barrier of satellites emerged. Casting out from the barrier are several other satellites ranging across the 2D plane. The second visualization for Polish depicts a very similar arrangement flipped across the PC2 (vertical) axis.
 
-The similarities between topics in the models are more difficult to discover. Choosing a relevance of 0.6 (slightly preferring the most frequent terms in a topic to the most distinct) here are some potential topic interpretations which can be explored further. Outliers were analyzed here as they are the most distinct.
+![Image](./img/viz/english.gif)
+
+![Image](./img/viz/polish.gif)
+
+The parallels between topics themselves in the models are more difficult to discover. Choosing a relevance of 0.6 (slightly preferring the most frequent terms in a topic to the most distinct) here are some potential topic interpretations which can be explored further. Outliers were analyzed here as they are the most distinct.
 
 + English
  	* Topic 4 - technology investment issues?
@@ -343,11 +347,7 @@ The similarities between topics in the models are more difficult to discover. Ch
 	* Topic 36 - climate issues?
 	* Topic 64 - agriculture issues?
 	* Topic 75 - economic or capital issues?
-
-![Image](./img/viz/english.gif)
-
-![Image](./img/viz/polish.gif)
-
+	* 
 To explore topics or experiment further, use the interactive interface available by opening the [project notebook](./Interlingual_Topic_Modeling.ipynb) in Google Colab then using "Table of contents" panel (upper left - see earlier instructions) to navigate to the final visualizations of the notebook.
 
 ## Ideas for Further Exploration
