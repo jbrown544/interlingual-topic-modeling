@@ -322,7 +322,7 @@ Note in the Polish most common nouns, there are two separate words having the tr
 While evaluating coherence at various topic cutoffs in the HDP and LDA models for this parallel sample, interesting plot similarities developed especially between LDA evaluations.
 
 | English | Polish |
-|---|:-:|:-:|
+|:-:|:-:|
 | ![Image](img/evals/english_lda_num_topics.png) | ![Image](img/evals/polish_lda_num_topics.png) |
 
 Note the resemblance between the pattern, coherence range, and optimal coherence (c_v value) between the parallel samples which discuss the same content in two distinct languages.
