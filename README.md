@@ -105,7 +105,7 @@ In these three demonstrations, the discussion will focus on the first, middle, a
 
 ## Language Samples
 
-Three samples in four languages have been selected for demonstration. The samples are ordered in increasing complexity with the last being the largest and most complex as it contains the same text in two languages.
+Three samples in four languages have been selected for demonstration. The samples are ordered in increasing complexity with the last being the largest and most complex as it contains the same text in two languages. When introducing news sources, be sure to apply the proper character encoding scheme when loading (latin-1, utf-8, etc.).
 
 1. **French:** ABU la Bibliothèque Universelle 
 	* source: [7 works in French by Jules Verne](http://abu.cnam.fr/BIB/)
@@ -116,6 +116,8 @@ Three samples in four languages have been selected for demonstration. The sample
 1. **Polish/English Parallel:** European Parliament Proceedings Parallel Corpus 1996-2011
 	* source: [Parallel Corpus Polish-English 01/2007-11/2011](http://www.statmt.org/europarl/)
 	* project copies: [/text/gov/multi/](./text/gov/multi)
+	
+When introducing new text sources, be sure to apply the character encoding scheme appropriate to the source: latin-1, utf-8, etc.
 
 ## French Language Sample Analysis
 
