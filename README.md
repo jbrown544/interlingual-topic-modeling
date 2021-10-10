@@ -40,7 +40,7 @@ Be sure to take advantage of the "Table of contents" navigation available within
 
 ## Analysis Steps
 
-Here are the overall steps applied in processing each language for high level context:
+Here are the overall steps applied in processing each language for high-level context:
 
 1. Language-Neutral Processing Pipeline and EDA
 1. Modeling
@@ -83,9 +83,15 @@ Additionally, a sorting key function can be configured to select the optimal mod
 
 ### 4. Translation Integration
 
-Translations are integrated for visualization by creating an alternate Gensim dictionary provided to pyLDAvis. This translated dictionary is created by persisting the Gensim generated dictionary to a file, augmenting the terms in the file with the requested language translation, then reconstituting an instance of the augmented dictionary. This augmented dictionary may then be used in pyLDAvis to present both the target and source language terms.
+Translations are integrated into visualizations by constructing a substitute Gensim dictionary. This translated dictionary is created by: 
 
-#### Note: Caching
+1. persisting the originally Gensim generated dictionary to a file, 
+1. augmenting the terms in that file with the target language term translations, 
+1. then constructing an instance of the augmented term dictionary with Gensim. 
+
+This augmented term Gensim dictionary may then be used in pyLDAvis to present both the target and source language terms. The terms are juxtaposed in the visualization as: "translated term (untranslated term)"
+
+#### Caching
 
 Because there are costs associated with the cloud translation API, as features are translated they are persisted in a JSON cache file. This file contains dictionaries for each language pair developed. Each language pair dictionary contains individual terms previously translated (source vs. target language). If the [project notebook](./Interlingual_Topic_Modeling.ipynb) is being executed in an ephemeral environment (such as Google Colab), remember to download a permanent copy of the cache files in the ```\caches``` folder. Generating the same translations repeatedly using the cloud API can become unnecessarily expensive otherwise.
 
@@ -115,8 +121,10 @@ Three samples in four languages have been selected for demonstration. The sample
 
 <figure>
 <img src="./img/327px-'From_the_Earth_to_the_Moon'_by_Henri_de_Montaut_39.jpg" height="400" width="300"/>
-<figcaption><small>'From the Earth to the Moon' Henri de Montaut, <a href="https://commons.wikimedia.org/w/index.php?curid=11412182">Public Domain</a>, via Wikimedia Commons</small></figcaption>
+<figcaption><small>'From the Earth to the Moon' by Henri de Montaut, <a href="https://commons.wikimedia.org/w/index.php?curid=11412182">Public Domain</a>, via Wikimedia Commons</small></figcaption>
 </figure>
+
+### Sample
 
 This sample consists of seven works by the French author Jules Verne.
 
@@ -161,9 +169,9 @@ We can see these works average about 13 words per sentence. The document average
 
 In the 17 parts-of-speech detected, there are notable occurrences of adpositions, nouns, and verbs.
 
-[POS Tags](https://universaldependencies.org/docs/u/pos/)
-
 ![Image](img/eda/french_pos.png)
+
+[POS Tags](https://universaldependencies.org/docs/u/pos/)
 
 The most common nouns detected often describe the fictional characters, time, measurement, or places. These works are often about travel with science fiction themes relevant to the time they were written. Interestingly, though the parts-of-speech plot indicated far more nouns than proper nouns, here we see several what appear to be proper nouns in the most common plot. 
 
@@ -197,7 +205,9 @@ source viewer does not display them. Also, remember to expand the left "Table of
 <figcaption><small>Melbeans, <a href="https://commons.wikimedia.org/wiki/File:109899_newsstand_300.jpg">Public Domain</a>, via Wikimedia Commons</small></figcaptiion>
 </figure>
 
-This sample contains 30K Spanish news headlines gathered from such sources as RSS feeds.
+### Sample
+
+This sample contains 30K Spanish news headlines gathered from sources such as RSS feeds.
 
 ### EDA
 
@@ -228,9 +238,9 @@ Treating these headlines as individual documents and performing exploratory text
 
 In the 16 parts-of-speech detected, there are notable occurrences of adpositions, determiners, nouns, and verbs. The ratio of proper nouns to nouns appears to be higher than in the earlier lengthy fictional works, but information-packed news headlines may explain this.
 
-[POS Tags](https://universaldependencies.org/docs/u/pos/)
-
 ![Image](img/eda/spanish_pos.png)
+
+[POS Tags](https://universaldependencies.org/docs/u/pos/)
 
 The most common nouns in this Spanish news headline sample reflect many mentions of time, place, and terms that may be affiliated with governance.
 
@@ -263,6 +273,8 @@ source viewer does not display them. Also, remember to expand the left "Table of
 <img src="./img/Leeuwarden%2C_de_vlaggen_van_de_Europese_Unie_op_de_Stationsweg_IMG_3726_2018-05-21_12.47.jpg" width="300"/>
 <figcaption><small>Michielverbeek, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</small></figcaption>
 </figure>
+
+### Sample
 
 This sample is a parallel corpus meaning it is the same content represented in multiple languages. The source is a compilation of European parliamentary proceedings taken from 1996-2022 translated into 21 European languages. The publishers intent with these parallel corpora was for use in statistical machine translation systems. 
 
@@ -308,14 +320,13 @@ Observing the most common noun and verb plots juxtaposed between the languages, 
 
 Note in the Polish most common nouns, there are two separate words having the translation "countries." In the pipeline processing for modeling lemmatization may reduce the words into identical root words. It is possible that in the Polish language word alterations such as those reduced by lemmatization could account for large increase in word variety over English.
 
-
-[POS Tags](https://universaldependencies.org/docs/u/pos/)
-
 | English | Polish |
 |:-:|:-:|
 | ![Image](img/eda/english_pos.png) | ![Image](img/eda/polish_pos.png) |
 | ![Image](img/eda/english_nouns.png) | ![Image](img/eda/polish_nouns.png)
 | ![Image](img/eda/english_verbs.png) | ![Image](img/eda/polish_verbs.png)
+
+[POS Tags](https://universaldependencies.org/docs/u/pos/)
 
 ### Coherence Evaluation
 
@@ -337,16 +348,16 @@ The interesting parallels observed in the coherence evaluation continue in visua
 
 ![Image](./img/viz/polish.gif)
 
-The parallels between topics themselves in the models are more difficult to discover. Choosing a relevance of 0.6 (slightly preferring the most frequent terms in a topic to the most distinct) here are some potential topic interpretations which can be explored further. Outliers were analyzed here as they are the most distinct.
+The parallels between the topics themselves in the models are more difficult to discern. Choosing a relevance of 0.6 (lightly weighting the most frequent terms in a topic over the most distinct) here are some potential topic interpretations which can be explored further in the [project notebook](./Interlingual_Topic_Modeling.ipynb). The outliers were analyzed here as they are the most distinct.
 
-+ English
- 	* Topic 4 - technology investment issues?
-	* Topic 69 - conflict / threat issues?
-	* Topic 70 - sugar / fruit production issues?
-+ Polish
-	* Topic 36 - climate issues?
-	* Topic 64 - agriculture issues?
-	* Topic 75 - economic or capital issues?
++ English Sample Topic Interpretations
+ 	* Topic 4 - technology investment
+	* Topic 69 - conflict / threat
+	* Topic 70 - sugar / fruit production
++ Polish Sample Topic Interpretations
+	* Topic 36 - climate
+	* Topic 64 - agriculture
+	* Topic 75 - economic / finance
 
 Opening the [project notebook](./Interlingual_Topic_Modeling.ipynb) allows interaction with this visualization for exploration of the topics. Be sure to use the "Open in Colab" button at top to enable the visualizations because the GitHub 
 source viewer does not display them. Also, remember to expand the left "Table of contents" panel to quickly navigate the notebook's structure.
@@ -355,8 +366,8 @@ source viewer does not display them. Also, remember to expand the left "Table of
 
 1. An interesting idea for additional exploration is to retrofit the processing pipeline introduced here with the library [tomotopy](https://bab2min.github.io/tomotopy/v0.12.2/en/). According to this [post by Eduardo Coronado Sroka](https://towardsdatascience.com/dont-be-afraid-of-nonparametric-topic-models-part-2-python-e5666db347a), Gensim can be difficult when using HDP and there may be advantages with tomotopy. Initial investigation indicated there [may be code](https://github.com/bab2min/tomotopy/blob/main/examples/lda_visualization.py) to help visualize tomotopy output using pyLDAvis.
 2. The JSON cache file currently persisting term translations could be modified to use a shared repository of translations such as a database service. Maintaining the information in a file is not always convenient. Interrogating cloud APIs for the translation of individual terms can become expensive.
-3. The parallel language sample used in this exploration did not generate ideal topic coherence. Investigating other translations such as public domain books may prove interesting for comparing topic models generated in works with equivalent meaning.
-4. Performing machine pre-translations on texts then applying the process developed here for comparing parallel corpora also offers interesting territory for exploration. This is especially the case to detect if the machine translation product introduces entropy potentially reducing coherence.
+3. The parallel language samples used in this exploration create interesting questions. Investigating other translations such as public domain books may prove interesting for comparing topic models generated in other works with equivalent meaning.
+4. Performing machine pre-translations on texts then applying the processed developed here for comparing parallel corpora offers interesting territory for exploration. This is especially the case to detect whether a machine translated corpus introduces semantic entropy reducing overall coherence.
 
 ## More Information
 
