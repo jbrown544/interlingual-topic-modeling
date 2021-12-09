@@ -2,6 +2,10 @@
 
 [![Built with spaCy](https://img.shields.io/badge/made%20with%20❤%20and-spaCy-09a3d5.svg)](https://spacy.io)
 
+## Update!
+
+Some of the ideas discussed in [Ideas for Further Exploration](#ideas-for-further-exploration) have been attempted and included in a [second iteration of this work](./PART2.md).
+
 ## Objective
 
 In this exploration, the primary goal is to discover methods for applying modern NLP thematic modeling to generate intuition over non-English language corpora without requiring source document translation. Secondary goals are to discover techniques for parameter optimization and to develop reusable interlingual tools portable across language sources. Inputs into the processes will be unstructured therefore the design will make few assumptions allowing for flexibility with varied sources and languages.
@@ -278,7 +282,7 @@ source viewer does not display them. Also, remember to expand the left "Table of
 
 ### Sample
 
-This sample is a parallel corpus meaning it is the same content represented in multiple languages. The source is a compilation of European parliamentary proceedings taken from 1996-2022 translated into 21 European languages. The publishers intent with these parallel corpora was for use in statistical machine translation systems. 
+This sample is a parallel corpus meaning it is the same content represented in multiple languages. The source is a compilation of European parliamentary proceedings taken from 1996-2011 translated into 21 European languages. The publishers intent with these parallel corpora was for use in statistical machine translation systems. 
 
 For this comparative analysis, the languages of Polish and English will be tested.
 
@@ -370,6 +374,10 @@ source viewer does not display them. Also, remember to expand the left "Table of
 2. The JSON cache file currently persisting term translations could be modified to use a shared repository of translations such as a database service. Maintaining the information in a file is not always convenient. Interrogating cloud APIs for the translation of individual terms can become expensive.
 3. The parallel language samples used in this exploration create interesting questions. Investigating other translations such as public domain books may prove interesting for comparing topic models generated in other works with equivalent meaning.
 4. Performing machine pre-translations on texts then applying the processed developed here for comparing parallel corpora offers interesting territory for exploration. This is especially the case to detect whether a machine translated corpus introduces semantic entropy reducing overall coherence.
+
+### Update!
+
+Some of the ideas discussed above have been attempted and included in a [second iteration of this work](./PART2.md).
 
 ## More Information
 
